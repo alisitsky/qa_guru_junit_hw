@@ -1,7 +1,6 @@
 package com.alisitsky.page;
 
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -21,8 +20,8 @@ public class TextBoxPage {
             currentAddressOutput = $("#output #currentAddress"),
             permanentAddressOutput =$ ("#output #permanentAddress");
 
-    public TextBoxPage openPage(String url) {
-        open(url);
+    public TextBoxPage openPage() {
+        open("https://demoqa.com/text-box");
         return this;
     }
 

@@ -2,7 +2,6 @@ package com.alisitsky.tests;
 
 import com.alisitsky.page.TextBoxPage;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -20,7 +19,7 @@ public class TextBoxParametrizedTest extends TestBase {
     @ParameterizedTest
     public void fillFormTest(String userName, String userEmail, String currentAddress, String permanentAddress){
 
-        textBoxPage.openPage("https://demoqa.com/text-box")
+        textBoxPage.openPage()
                 .checkMainHeaderHasText("Text Box")
                 .setUserName(userName)
                 .setUserEmail(userEmail)
