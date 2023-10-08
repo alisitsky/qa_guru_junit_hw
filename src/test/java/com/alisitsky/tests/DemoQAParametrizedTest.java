@@ -1,6 +1,7 @@
 package com.alisitsky.tests;
 
-import com.alisitsky.page.DemoqaMainPage;
+import com.alisitsky.page.DemoQAMainPage;
+import com.alisitsky.page.DemoQASectionPage;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -9,7 +10,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class DemoQAParametrizedTest extends TestBase{
 
-    DemoqaMainPage demoqaMainPage = new DemoqaMainPage();
+    DemoQAMainPage demoqaMainPage = new DemoQAMainPage();
+    DemoQASectionPage demoQASectionPage = new DemoQASectionPage();
 
     static Stream<String> elementsString() {
         return Stream.of("Elements", "Forms", "Alerts, Frame & Windows", "Widgets", "Interactions", "Book Store");
@@ -20,7 +22,7 @@ public class DemoQAParametrizedTest extends TestBase{
     @MethodSource("elementsString")
     public void demoQASwitchingWebsitesSectionsTest(String sectionName){
         open("https://demoqa.com/");
-        demoqaMainPage.openSection(sectionName)
-                    .checkSectionTitle(sectionName);
+        demoqaMainPage.openSection(sectionName);
+        demoQASectionPage.checkSectionTitle(sectionName);
     }
 }

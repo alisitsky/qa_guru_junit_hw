@@ -12,7 +12,7 @@ public class JavaRushParametrizedTest extends TestBase {
 
     @CsvFileSource(resources = "/javaRushChangeLanguageTest.csv")
     @ParameterizedTest(name = "Смена языка на {5}")
-    public void JavaRushChangeLanguageTest(String url,
+    public void javaRushChangeLanguageTest(String url,
                                            String reviewsNative,
                                            String aboutNative,
                                            String csNative,
